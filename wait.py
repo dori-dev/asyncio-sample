@@ -30,6 +30,7 @@ async def main():
         ]
         done, pending = await asyncio.wait(
             requests,
+            timeout=5,
             return_when=asyncio.FIRST_EXCEPTION,
         )
         for request in done:
